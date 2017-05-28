@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+}
+
+.tool {
+  /*margin: 10%;*/
+  /*position: relative;*/
+  box-sizing: border-box;
+  flex-basis: 40%;
+  flex-direction: row;
+  flex-shrink: 0;
+  border-radius: 5%;
+  border: solid 1px #039be5;
+  margin: 2%;
+}
+
+.tool-description {
+  padding: 2%;
+  text-align: center;
+}
+
+.tool img{
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body {
+  /*background-color: #f7f7f7;*/
+};

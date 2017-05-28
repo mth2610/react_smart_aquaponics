@@ -1,0 +1,57 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background-image: url('../../images/leaf.jpg');
+  background-position: center;
+  background-size: cover;
+  display: table;
+  top: 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.intro .inner {
+  display: table-cell;;
+  vertical-align: middle;
+}
+.content{
+  text-align: center;
+  color: white;
+}
+
+.content h1 {
+  font-size: 225%;
+}
+
+.content p {
+  font-size: 120%;
+  margin: 30px;
+}
+
+.content .btn {
+  color: 	white;
+  font-size: 120%;
+  padding: 10px 20px;
+  border-radius: 9px;
+  background-color: 	#4caf50;
+  text-decoration: none;
+  border: 2px solid #4aa84a;
+  margin: 1%
+}
+
+.btn:hover {
+  background-color: #2aa22a;
+}
+.btn:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
