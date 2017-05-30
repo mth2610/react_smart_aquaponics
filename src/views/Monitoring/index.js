@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import { Card, Divider, Segment, Grid, Header, Accordion, Image} from 'semantic-ui-react'
+import { Card, Divider, Segment, Grid, Header, Accordion, Image, Button, Container} from 'semantic-ui-react'
 import './index.css';
 import airTemperature from '../../images/IoT/air-temperature.svg'
 import waterTemperature from '../../images/IoT/water-temperature.svg'
@@ -34,6 +34,21 @@ function SensorImage (props) {
     )
   }
 };
+
+function CameraCotroller (action){
+  var urlApi = `http://localhost:8000/api/ipcamera_controller?mac_adr=00:0c:00:09:31:fa&action=${action}`;
+  console.log(urlApi)
+  fetch(urlApi)
+   .then((response) => {
+        if(response.ok) {
+          return response.json()
+        } else {
+          console.log('Server response wasn\'t OK');
+        }
+      }).then((data) => {
+
+      })
+}
 
 class LastestDatavalue extends Component {
     constructor(props) {
@@ -137,7 +152,15 @@ class Sites extends Component {
                 <Accordion></Accordion>
                 <Header as='h3' dividing>Images</Header>
                 <Header as='h3' dividing>Camera streaming</Header>
-                <Image width='100%' src='http://42.116.186.91:80/videostream.cgi?loginuse=admin&loginpas=admin' />
+                <div>
+                  <Image width='80%'  src='http://192.168.1.47/videostream.cgi?loginuse=admin&loginpas=admin' />
+                  <Button.Group verticalAlign='middle' basic size='medium'>
+                    <Button icon='arrow up' onClick={()=>{CameraCotroller(0)}}/>
+                    <Button icon='arrow down' onClick={()=>{CameraCotroller(2)}}/>
+                    <Button icon='arrow left'onClick={()=>{CameraCotroller(4)}}/>
+                    <Button icon='arrow right' onClick={()=>{CameraCotroller(6)}}/>
+                  </Button.Group>
+                </div>
               </Segment>
           )
           })
