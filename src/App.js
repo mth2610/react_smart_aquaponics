@@ -5,7 +5,7 @@ import Services from './views/Services';
 import CountCircles from './views/Services/CountCircles';
 import Sites from './views/Monitoring';
 import Details from './views/Monitoring/Details'
-import 'semantic-ui-css/semantic.min.css';
+
 class App extends Component {
   render() {
     return (
